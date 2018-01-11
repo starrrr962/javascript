@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+		function winClose() {
+			if (document.querySelector('input[name="test2"]:checked')!=null) {
+				opener.document.getElementById("receiver").value = document
+						.querySelector('input[name="test2"]:checked').value;
+				window.close();
+			}else{
+				alert("선택된 다솜이 없습니다.");
+				window.close();
+			}
+		}
+		function init(){
+			document.getElementById("test").value=opener.document.getElementById("star").value;
+		}
+	</script>
+</head>
+<body onload="init()">
+	<h1>프로듀스 3</h1>
+	당신의 이름 : <input type="text" name="test" id="test">
+	<h2>지금 바로 당신의 다솜에게 투표하세요!</h2>
+	<input type="radio" name="test2" value="이다솜">이다솜
+	<input type="radio" name="test2" value="솜솜">솜솜
+	<input type="radio" name="test2" value="이다솜바보">이다솜바보
+	<input type="button" value="투표하기" onclick="winClose()">
+</body>
+</html>

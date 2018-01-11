@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script lang="javascript">
+	if (document.getElementById) {
+		document.write('<style>\n');
+		document.write('.submenu{display:none;}\n');
+		document.write('</style>\n');
+	}
+
+	function SwitchMenu(obj) {
+		if (document.getElementById) {
+			var el = document.getElementById(obj);
+			var ar = document.getElementById("maindiv").getElementsByTagName(
+					"span");
+			if (el.style.display != "block") {
+				for (var i = 0; i < ar.length; i++) {
+					if (ar[i].className == "submenu")
+						ar[i].style.display = "none";
+				}
+				el.style.display = "block";
+			} else {
+				el.style.display = "none";
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<div id="maindiv">
+		<div onmouseover="SwitchMenu('sub1')">
+			<b>첫번째 메뉴</b>
+		</div>
+		<span class="submenu" id="sub1"> - <a href="#">첫번째 메뉴-1</a><br>
+			- <a href="#">첫번째 메뉴-2</a><br> - <a href="#">첫번째 메뉴-3</a>
+		</span>
+		<div onmouseover="SwitchMenu('sub2')">
+			<b>두번째 메뉴</b>
+		</div>
+		<span class="submenu" id="sub2"> - <a href="#">두번째 메뉴-1</a><br>
+			- <a href="#">두번째 메뉴-2</a><br> - <a href="#">두번째 메뉴-3</a>
+		</span>
+		<div onmouseover="SwitchMenu('sub3')">
+			<b>세번째 메뉴</b>
+		</div>
+		<span class="submenu" id="sub3"> - <a href="#">세번째 메뉴-1</a><br>
+			- <a href="#">세번째 메뉴-2</a><br> - <a href="#">세번째 메뉴-3</a>
+		</span>
+	</div>
+
+</body>
+</html>

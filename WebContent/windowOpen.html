@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+var name;
+function newWin(){
+	name = window.open("NewWin.html","","height='300',width='200',top='100',left='200'");
+}
+</script>
+<h1>솜솜 투표하기</h1>
+당신의 이름은 : <input type="text" name="star" id="star"><br>
+	<a href="#" onclick=newWin()>투표하러가기</a><br>
+	투표결과 : <input type="text" name="receiver" id="receiver">
+</body>
+</html>
